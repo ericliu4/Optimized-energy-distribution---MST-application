@@ -1,4 +1,4 @@
-TopLeftX,TopLeftY,BottomRightX,BottomRightY,Height
-0,15,8,5,7
-0,4,10,0,-3
-8,20,10,10,100
+TopLeftX,TopLeftY,BottomRightX,BottomRightY,Zstart,Height
+0,15,8,5,5,7
+0,4,10,0,2,-3
+8,20,10,10,40,100

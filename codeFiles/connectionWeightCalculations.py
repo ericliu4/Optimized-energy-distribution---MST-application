@@ -4,7 +4,7 @@ def connectionWeights(nodesList, sourceNode, obstacleList) -> list:
     input:
     nodesList [[xLoc, yLoc, zLoc], [...]]
     sourceNode [[xLoc, yLoc, zLoc]]
-    obstacleList [[TopLeftX,TopLeftY,BottomRightX,BottomRightY,Height], [...]]
+    obstacleList [[TopLeftX,TopLeftY,BottomRightX,BottomRightY,Zstart, Height], [...]]
 
     output: 
     list with [[node1, node2, weight], [...], [...]]

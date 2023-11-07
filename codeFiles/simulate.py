@@ -24,5 +24,5 @@ class simulate:
         return self.obstaclesList
 
     def connectionWeights(self):
-        self.heap = graph.connectionWeights(self.nodesList, self.sourceNode, self.obstaclesList) 
+        self.heap = heapq.heapify(graph.connectionWeights(self.nodesList, self.sourceNode, self.obstaclesList))
         print('done')

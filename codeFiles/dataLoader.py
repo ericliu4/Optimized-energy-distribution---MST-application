@@ -26,7 +26,7 @@ def sourceLoader(name):
 def obstacleLoader(name):
     ##TopLeftX,TopLeftY,BottomRightX,BottomRightY,Height
     data = pd.read_csv(name)
-    lst = data[['TopLeftX','TopLeftY', 'BottomRightX', 'BottomRightY', 'Height']].values.tolist()
+    lst = data[['TopLeftX','TopLeftY', 'BottomRightX', 'BottomRightY', 'Zstart', 'Height']].values.tolist()
     #print(lst)
     return lst
 
