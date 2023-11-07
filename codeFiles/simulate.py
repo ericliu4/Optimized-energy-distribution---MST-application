@@ -11,6 +11,10 @@ class simulate:
         self.nodesList.append(self.sourceNode[0])
         self.heap = []
 
+        #error handling for input data
+        self.obstaclesList = graph.obstacleErrorHandling(self.obstaclesList) 
+        self.nodesList = graph.sourceNodeHandling(self.nodesList)
+
         
     
     #just testing if the class structure works

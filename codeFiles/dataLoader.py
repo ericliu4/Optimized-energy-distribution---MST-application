@@ -2,7 +2,6 @@ import pandas as pd
 '''
 file used to import data from all 3 CSV files
 return list of lists back to simulate function
-
 ObstacleLoader uses a riemann sum technique to 
 add the difference in cost variable when going over 
 high/low altitudes
