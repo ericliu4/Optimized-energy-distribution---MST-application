@@ -13,7 +13,7 @@ class simulate:
 
         #error handling for input data
         self.obstaclesList = graph.obstacleErrorHandling(self.obstaclesList) 
-        self.nodesList = graph.sourceNodeHandling(self.nodesList)
+        self.nodesList = graph.nodeHandling(self.nodesList)
 
         
     
