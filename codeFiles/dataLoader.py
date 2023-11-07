@@ -11,14 +11,14 @@ def nodesLoader(name):
     data = pd.read_csv(name)
     #print(data)
     lst = data[['XLocation', 'YLocation', 'ZLocation']].values.tolist()
-    print(lst)
+    #print(lst)
     return lst
 
 def sourceLoader(name):
     data = pd.read_csv(name)
     #print(data)
     lst = data[['XLocation', 'YLocation', 'ZLocation']].values.tolist()
-    print(lst)
+    #print(lst)
     return lst
 
 #add error checking function later (make sure the corners are correct) 
@@ -27,5 +27,7 @@ def obstacleLoader(name):
     ##TopLeftX,TopLeftY,BottomRightX,BottomRightY,Height
     data = pd.read_csv(name)
     lst = data[['TopLeftX','TopLeftY', 'BottomRightX', 'BottomRightY', 'Height']].values.tolist()
-    print(lst)
+    #print(lst)
     return lst
+
+
