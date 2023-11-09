@@ -88,20 +88,25 @@ def connectionWeights(nodesList, sourceNode, obstacleList) -> list:
     input:
     nodesList [[xLoc, yLoc, zLoc], [...]]
     sourceNode [[xLoc, yLoc, zLoc]]
-    obstacleList [[TopLeftX,TopLeftY,BottomRightX,BottomRightY,Height], [...]]
+    obstacleList [[TopLeftX,TopLeftY,BottomRightX,BottomRightY,Zstart, Height], [...]]
 
-    output: 
-    list with [[node1, node2, weight], [...], [...]]
+    output:  
+    list with [weight, node1, node2], [...], [...]] # I THINK THIS IS THE NEW FORMAT??
     '''
     master_list = []
     for index, node1 in enumerate(nodesList):
         for node2 in nodesList[index+1:]:
+            x1, x2, y1, y2, z1, z2 = node1[0], node2[0], node1[1], node2[1], node1[2], node2[2]
+            dist = ((x2 - x1) ** 2 + (y2 - y1) ** 2 + (z2 - z1) ** 2) ** 0.5
+            total_weight = 0
             for obstacle in obstacleList:
-                master_list.append([weightFinder(node1, node2, *obstacle), node1, node2])
+                total_weight += weightFinder(node1, node2, *obstacle)
+            total_weight = total_weight - 2*dist
+            master_list.append([total_weight, node1, node2])
     print(master_list)
     return master_list
     ###2 parts
     #1. add the extra weight due to obstacle
     #2. add distance and just height difference b/w them
-#if __name__ == "__main__":
-    #print(weightFinder([2,0,0.5], [-1,1,0.5], 0, 1, 1, 0, 0, 1))
+# if __name__ == "__main__":
+#     print(weightFinder([2,0,0.5], [-1,1,0.5], 0, 1, 1, 0, 0, 1))
