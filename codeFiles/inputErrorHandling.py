@@ -17,7 +17,14 @@ def obstacleErrorHandling(lst):
 
 
 #this part to be completely later after defining global max/min for the graph
+#only take unique node values
 def nodeHandling(lst):
     print('\n\nSourceNodeHandling\n\n')
+    newLst = []
+    seen = set()
+    for x,y,z in lst:
+        if (x,y,z) not in seen:
+            seen.add((x,y,z))
+            newLst.append([x,y,z])
 
-    return lst
+    return newLst

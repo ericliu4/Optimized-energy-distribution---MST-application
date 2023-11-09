@@ -7,6 +7,7 @@ def twoDweightFinder(node1, node2, obstacle1, obstacle2, height):
     NodeTop = max(node1[1], node2[1])
     NodeBottom = min(node1[1], node2[1])
     # Obstacle will be top left bottom right sorted, but just in case...
+    #Function already made in inputErrorHandling
     ObsLeft = min(obstacle1[0], obstacle2[0])
     ObsRight = max(obstacle1[0], obstacle2[0])
     ObsTop = max(obstacle1[1], obstacle2[1])
