@@ -101,7 +101,7 @@ def connectionWeights(nodesList, sourceNode, obstacleList) -> list:
             total_weight = 0
             for obstacle in obstacleList:
                 total_weight += weightFinder(node1, node2, *obstacle)
-            total_weight = total_weight - 2*dist
+            total_weight = total_weight - (len(obstacleList) - 1)*dist
             master_list.append([total_weight, node1, node2])
     print(master_list)
     return master_list
