@@ -44,7 +44,7 @@ def weightFinder(node1, node2, TopLeftX, TopLeftY, BottomRightX, BottomRightY, Z
         e2.append(Zstart+height)
         vertices.append(e2)
 
-    print(vertices)
+    #print(vertices)
 
     # generate min dist vertex
     minvertex, mindist = None, np.inf
@@ -81,6 +81,7 @@ def weightFinder(node1, node2, TopLeftX, TopLeftY, BottomRightX, BottomRightY, Z
     if (cond1 or cond2 or cond3): return height*2 + dist # bonus # actually implement min dist of any axis cuz height is z axis only
     else: return dist
 
+
 def connectionWeights(nodesList, sourceNode, obstacleList) -> list:
     n = len(nodesList)
     '''
@@ -93,15 +94,14 @@ def connectionWeights(nodesList, sourceNode, obstacleList) -> list:
     list with [[node1, node2, weight], [...], [...]]
     '''
     master_list = []
-    for node1 in nodesList:
-        for node2 in nodesList:
-            if node1==node2: continue
+    for index, node1 in enumerate(nodesList):
+        for node2 in nodesList[index+1:]:
             for obstacle in obstacleList:
-                master_list.append([node1, node2, weightFinder(node1, node2, obstacle)])
-
+                master_list.append([weightFinder(node1, node2, *obstacle), node1, node2])
+    print(master_list)
+    return master_list
     ###2 parts
     #1. add the extra weight due to obstacle
     #2. add distance and just height difference b/w them
-
-if __name__ == "__main__":
-    print(weightFinder([2,0,0.5], [-1,1,0.5], 0, 1, 1, 0, 0, 1))
+#if __name__ == "__main__":
+    #print(weightFinder([2,0,0.5], [-1,1,0.5], 0, 1, 1, 0, 0, 1))
