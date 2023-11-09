@@ -11,10 +11,13 @@ class simulate:
         self.nodesList.append(self.sourceNode[0])
         self.heap = []
 
+
         #error handling for input data
         self.obstaclesList = graph.obstacleErrorHandling(self.obstaclesList) 
         self.nodesList = graph.nodeHandling(self.nodesList)
 
+        self.nodesToKeys, self.keysToNodes = graph.mapping(self.nodesList)
+        print("initial setup down")
         
     
     #just testing if the class structure works
