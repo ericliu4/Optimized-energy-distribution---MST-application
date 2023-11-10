@@ -10,8 +10,11 @@ inputSourceFile = 'inputDataFiles/sourceNodes - Sheet1.csv'
 inputObstacleFile = 'inputDataFiles/obstacleData - Sheet1.csv'
 instance1 = graph.simulate(algorithmVersion, inputDataFile, inputSourceFile, inputObstacleFile)
 #print(instance1.testFile())
+
 print(instance1.getNodesList())
+
 print(instance1.getSourceNode())
+
 print(instance1.getObstaclesList())
 
 print('\n\ninput data loaded\n\n')
@@ -19,5 +22,11 @@ print('\n\ninput data loaded\n\n')
 
 #add weights using a riemann sum technique (for most accurate cost)
 instance1.connectionWeights()
+
+#implements the disjoint set union algorithm
+#returns a minimum cost
+instance1.runAlgorithm()
 print('simulation complete')
+
+#PRINT DATA STARTING FROM HERE
 

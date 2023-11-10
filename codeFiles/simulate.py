@@ -23,6 +23,8 @@ class simulate:
             print(key, ":", (x,y,z))
 
         print("initial setup done\n\n")
+
+        self.costToConnect = 0
         
     
     #just testing if the class structure works
@@ -41,6 +43,25 @@ class simulate:
         print(heapq.heappop(self.heap))
         print('done')
 
-    #def runAlgorithm(self):
-        #while self.heap:
-            #heapq.heappop()
+    def runAlgorithm(self):
+        #declare a disjoint set union find data structure
+
+        self.uf = graph.unionFindStruct(self.n)
+        totalIslands = self.n
+
+        while self.heap and totalIslands != 1:
+            weight, node1, node2 = heapq.heappop(self.heap)
+            #map it to node numbers
+
+            #need tuple since list cannot be keys for dictionary
+            nodeNum1 = self.nodesToKeys[tuple(node1)]
+            nodeNum2 = self.nodesToKeys[tuple(node2)]
+
+            if (not self.uf.alreadyConnected(nodeNum1, nodeNum2)):
+                self.uf.union(nodeNum1, nodeNum2)
+                self.costToConnect += weight
+                print(nodeNum1, "connects to", nodeNum2)
+                totalIslands -= 1
+
+        print("total cost:", self.costToConnect)
+
