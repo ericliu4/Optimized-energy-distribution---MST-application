@@ -6,6 +6,6 @@ def mapping(nodesList):
         keysToNodes[index] = [x,y,z]
         nodesToKeys[(x,y,z)] = index
     print('mapping complete')
-    print(nodesToKeys)
-    print(keysToNodes)
+    #print(nodesToKeys)
+    #print(keysToNodes)
     return nodesToKeys, keysToNodes
