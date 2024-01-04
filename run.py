@@ -5,9 +5,9 @@ print(sys.executable)
 
 
 algorithmVersion = 1
-inputDataFile = 'inputDataFiles/InputDataNodes - Sheet1.csv'
-inputSourceFile = 'inputDataFiles/sourceNodes - Sheet1.csv'
-inputObstacleFile = 'inputDataFiles/obstacleData - Sheet1.csv'
+inputDataFile = 'C:/Users/eric7/OneDrive/Desktop/energyDistributionProject/Optimized-energy-distribution---MST-application/inputDataFiles/InputDataNodes - Sheet1.csv'
+inputSourceFile = 'C:/Users/eric7/OneDrive/Desktop/energyDistributionProject/Optimized-energy-distribution---MST-application/inputDataFiles/sourceNodes - Sheet1.csv'
+inputObstacleFile = 'C:/Users/eric7/OneDrive/Desktop/energyDistributionProject/Optimized-energy-distribution---MST-application/inputDataFiles/obstacleData - Sheet1.csv'
 instance1 = graph.simulate(algorithmVersion, inputDataFile, inputSourceFile, inputObstacleFile)
 #print(instance1.testFile())
 
@@ -27,6 +27,8 @@ instance1.connectionWeights()
 #returns a minimum cost
 instance1.runAlgorithm()
 print('simulation complete')
+
+print('Found best mapping')
 
 #PRINT DATA STARTING FROM HERE
 

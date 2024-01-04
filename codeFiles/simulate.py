@@ -38,10 +38,11 @@ class simulate:
         return self.obstaclesList
 
     def connectionWeights(self):
+        print('Forming Connection Weights\n\n')
         self.heap = graph.connectionWeights(self.nodesList, self.sourceNode, self.obstaclesList)
         heapq.heapify(self.heap)
         print(heapq.heappop(self.heap))
-        print('done')
+        print('done\n\n')
 
     def runAlgorithm(self):
         #declare a disjoint set union find data structure
@@ -60,7 +61,7 @@ class simulate:
             if (not self.uf.alreadyConnected(nodeNum1, nodeNum2)):
                 self.uf.union(nodeNum1, nodeNum2)
                 self.costToConnect += weight
-                print(nodeNum1, "connects to", nodeNum2)
+                print("source node", nodeNum1, "connects to source node", nodeNum2)
                 totalIslands -= 1
 
         print("total cost:", self.costToConnect)
